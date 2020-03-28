@@ -13,7 +13,7 @@ l2.sort(key=sort_by_range)
 a = fight(l1,l2)
 #a.run()
 
-
+'''
 try:
     a.run()
 
@@ -32,7 +32,9 @@ except Exception:
 
 
 '''
-f1 = open('战报.txt','w')
+filename = input('输入保存战报的文件名，若已存在将覆盖写入(***.txt): ')
+f1 = open(filename,'w') 
+#f1 = open('战报.txt','w')
 try:
     a.run()
 
@@ -44,8 +46,7 @@ except Exception:
             f1.write(lst[i//3]+'\n')
         tmp = eval('a.r'+str(i+1))
         if len(tmp)!=0:
-            champ = eval('r'+str(i//3+1))[i%3]
+            champ = eval('a.t'+str(i//3+1)+'origin')[i%3]
             f1.write(champ.name+'\t'+str(champ.hp)+'/'+str(champ.hp_limit)+'\n')
             f1.write(tmp+'\n')
 f1.close()
-'''
