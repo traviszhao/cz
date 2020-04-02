@@ -132,7 +132,7 @@ class fight():
             time4 = max(0,time1+time2-30) #组合技后技能弹道需要多久
             if time4 ==0:
                 self.cast_spell(team[n],spell,m)
-                self.record(n+1,i/10,spell)
+                self.record(n+1+m*3,i/10,spell)
                 continue
             tmp.enqueue([time4,None])
             self.events.enqueue(time4,team[n],spell,n+3*m+1)

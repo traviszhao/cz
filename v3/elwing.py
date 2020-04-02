@@ -16,6 +16,7 @@ class elwing():
         self.basic_attack=[None,'普通攻击',15,10,[1,0,100]]
         self.index = index
         self.rang = 420
+        self.ba = basic_attack
         #技能名 前摇 后摇 效果1 目标 ... 效果2(if exists) 目标 3....
         #target type1: 1:敌单体 2:敌全体 3:随机n段数(3,n)
         #target type2(辅助): 4:效果1生效目标 5:辅助目标 6:己方全体 7:自身 8:前排
@@ -24,6 +25,15 @@ class elwing():
 
     def genspell(self):         #摇技能
         return random.choice(self.spell_list)
+    def __str__(self):
+        s = ''
+        s += self.name+'\t'
+        s += '面板攻击: '+str(self.ba)+'\t'
+        s += '进场攻击: '+str(self.a)+'\t'
+        s += '进场防御: '+str(self.d)+'\t'
+        s += '血量: '+str(self.hp)+'/'+str(self.hp_limit)+'\t'
+        return s
+
 
 
 

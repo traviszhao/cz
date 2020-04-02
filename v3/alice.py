@@ -2,6 +2,7 @@ import random
 class alice():
     def __init__(self, basic_attack,attack_ratio, defense,defense_ratio, hp0, sup = None,index = 0):
         self.name = '爱丽丝'
+        self.ba = basic_attack
         self.ar = attack_ratio
         self.a = basic_attack*self.ar
         self.dr = defense_ratio
@@ -26,6 +27,14 @@ class alice():
 
     def genspell(self):         #摇技能
         return random.choice(self.spell_list)
+    def __str__(self):
+        s = ''
+        s += self.name+'\t'
+        s += '面板攻击: '+str(self.ba)+'\t'
+        s += '进场攻击: '+str(self.a)+'\t'
+        s += '进场防御: '+str(self.d)+'\t'
+        s += '血量: '+str(self.hp)+'/'+str(self.hp_limit)+'\t'
+        return s
 
 
 

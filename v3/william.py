@@ -7,6 +7,7 @@ class william():
         self.dr = defense_ratio
         self.d = defense*self.dr
         self.hp_limit = hp0
+        self.ba = basic_attack
         self.hp = hp0
         self.sup = None
         self.dodge = 0          #闪避未实装
@@ -24,6 +25,14 @@ class william():
 
     def genspell(self):         #摇技能
         return random.choice(self.spell_list)
+    def __str__(self):
+        s = ''
+        s += self.name+'\t'
+        s += '面板攻击: '+str(self.ba)+'\t'
+        s += '进场攻击: '+str(self.a)+'\t'
+        s += '进场防御: '+str(self.d)+'\t'
+        s += '血量: '+str(self.hp)+'/'+str(self.hp_limit)+'\t'
+        return s
 
 
 
